@@ -21,7 +21,7 @@ class MusicalInstruments::CLI
   def catalog
     input = nil
     while input != "exit"
-      puts "Enter the number of the instrument for a description or type exit:"
+      puts "Enter the number of the instrument for a description, cat to see the catalog again, or type exit:"
       input = gets.strip.downcase
       case input
       when "1"
@@ -32,6 +32,8 @@ class MusicalInstruments::CLI
         puts "Description for instrument 3..."
       when "4"
         puts "Description for instrument 4..."
+      when "cat"
+        list_instruments
       end
     end
   end
