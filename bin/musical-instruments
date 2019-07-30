@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/musical_instruments'
+
+MusicalInstruments::CLI.new.call

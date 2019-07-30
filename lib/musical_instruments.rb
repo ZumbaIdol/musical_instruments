@@ -1,6 +1,2 @@
-require "musical_instruments/version"
-
-module MusicalInstruments
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "./musical_instruments/version"
+require_relative './musical_instruments/cli'
