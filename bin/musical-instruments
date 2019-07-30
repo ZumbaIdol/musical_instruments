@@ -3,3 +3,5 @@
 require './lib/musical_instruments'
 
 MusicalInstruments::CLI.new.call  #encapsulation
+
+# Execution point
