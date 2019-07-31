@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/musical_instruments'
+require './lib/environment'
 
 MusicalInstruments::CLI.new.call  #encapsulation
 
