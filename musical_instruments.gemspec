@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Peruse different musical instruments"
   spec.description   = "Gets a list of musical instruments with descriptions and prices"
-  spec.homepage      = "www.example.com"
+  #spec.homepage      = "www.example.com"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -19,9 +19,9 @@ Gem::Specification.new do |spec|
   if spec.respond_to?(:metadata)
     spec.metadata["allowed_push_host"] = "www.example.com"
 
-    spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "www.example.com"
-    spec.metadata["changelog_uri"] = "www.example.com"
+    #spec.metadata["homepage_uri"] = spec.homepage
+    #spec.metadata["source_code_uri"] = "www.example.com"
+    #spec.metadata["changelog_uri"] = "www.example.com"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
