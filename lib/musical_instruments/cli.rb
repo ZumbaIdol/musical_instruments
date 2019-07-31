@@ -5,7 +5,6 @@ class MusicalInstruments::CLI
     puts "Welcome to My-Music!"
     list_instruments
     catalog
-    next_time
   end
   
   def list_instruments
@@ -34,6 +33,8 @@ class MusicalInstruments::CLI
         puts "Description for instrument 4..."
       when "cat"
         list_instruments
+      when "exit"
+        next_time
       else
         puts "I don't understand your answer; please type a number for the instrument, cat, or exit"
       end
