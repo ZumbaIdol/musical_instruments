@@ -17,9 +17,9 @@ class MusicalInstruments::Instruments
     doc = Nokogiri::HTML(open("https://www.zzounds.com/item--FEN0197102"))
     
     instr = self.new
-    name = doc.search("h1#product-title").text.strip
-    price = doc.search("div .span-12 .price span").text.strip
-    description = doc.search("div#tab-product-overview").text.strip
+    instr.name = doc.search("h1#product-title").text.strip
+    instr.price = doc.search("div .span-12 .price span").text.strip
+    instr.description = doc.search("div#tab-product-overview").text.strip
     instr
   end
   
@@ -27,9 +27,9 @@ class MusicalInstruments::Instruments
     doc = Nokogiri::HTML(open("https://www.zzounds.com/item--GREGE4E825Z"))
     
     instr = self.new
-    name = doc.search("h1#product-title").text.strip
-    price = doc.search("div .span-22 .price span").text.strip
-    description = doc.search("div#tab-product-overview").text.strip
+    instr.name = doc.search("h1#product-title").text.strip
+    instr.price = doc.search("div .span-22 .price span").text.strip
+    instr.description = doc.search("div#tab-product-overview").text.strip
     instr
   end
 end
