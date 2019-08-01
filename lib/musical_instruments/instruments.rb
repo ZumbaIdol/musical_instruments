@@ -15,6 +15,7 @@ class MusicalInstruments::Instruments
     
   def self.scrape_zzounds
     doc = Nokogiri::HTML(open("https://www.zzounds.com/item--FEN0197102"))
+    name = doc.search("h1#product-title").text
     binding.pry
   end
 end
