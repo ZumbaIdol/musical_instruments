@@ -1,7 +1,7 @@
 class MusicalInstruments::Instruments
   attr_accessor :name, :price, :url, :availability
   
-  def self.instrument
+  def self.cataolog
     #It should return instances of Instruments
     self.scrape_instruments
   end
@@ -9,12 +9,12 @@ class MusicalInstruments::Instruments
   def self.scrape_instruments
     # Scrape websites and return instrument data
     instruments = []
-    instruments << self.scrape_sweetwater
+    instruments << self.scrape_zzounds
     instruments
   end
     
-  def self.scrape_sweetwater
-    doc = Nokogiri::HTML(open("https://www.sweetwater.com/store/detail/RD2000--roland-rd-2000-88-key-stage-piano"))
+  def self.scrape_zzounds
+    doc = Nokogiri::HTML(open("https://www.zzounds.com/item--FEN0197102"))
     binding.pry
   end
 end

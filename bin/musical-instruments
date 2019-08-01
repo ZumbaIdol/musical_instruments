@@ -2,7 +2,6 @@
 
 require './lib/environment'
 require "bundler/setup"
-require "open_uri"
 
 MusicalInstruments::CLI.new.call  #encapsulation
 
