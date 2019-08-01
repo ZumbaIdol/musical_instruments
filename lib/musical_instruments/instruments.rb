@@ -26,8 +26,8 @@ class MusicalInstruments::Instruments
   def self.scrape_drums
     doc = Nokogiri::HTML(open("https://www.zzounds.com/item--GREGE4E825Z"))
     
-    name = ("h1#product-title").text.strip
-    
+    name = doc.search("h1#product-title").text.strip
+    price = doc.search("div .span-22 .price span").text.strip
     binding.pry
   end
 end
