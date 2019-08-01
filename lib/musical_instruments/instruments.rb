@@ -2,7 +2,7 @@ class MusicalInstruments::Instruments
   attr_accessor :name, :price, :url, :availability
   
   def self.instrument
-    # It should return instances of Instruments
+    #It should return instances of Instruments
     # puts "Musical instruments for sale:"
     # puts <<-DOC.gsub /^\s*/, ''
     # 1. Roland RD-2000 88-key Stage Piano, $2399.99
@@ -11,7 +11,7 @@ class MusicalInstruments::Instruments
     # 4. Cremona SV-500 Series Violin Outfit, $399.99
     # DOC
     
-    # Scrape websites and return instrument data
+  #   # Scrape websites and return instrument data
     instrument_1 = self.new
     instrument_1.name = "Roland RD-2000 88-key Stage Piano"
     instrument_1.price = "$2399.99"
