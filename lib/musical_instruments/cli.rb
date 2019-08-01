@@ -9,7 +9,7 @@ class MusicalInstruments::CLI
   
   def list_instruments
     puts "Musical Instruments for sale:"
-    @instruments = MusicalInstruments::Instruments.instrument
+    @instruments = MusicalInstruments::Instruments.cataolog
     @instruments.each.with_index(1) do |instrument, i|
       puts "#{i}. #{instrument.name} - #{instrument.price} - #{instrument.description}"
     end

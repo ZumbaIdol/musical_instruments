@@ -9,7 +9,8 @@ class MusicalInstruments::Instruments
   def self.scrape_instruments
     # Scrape websites and return instrument data
     instruments = []
-    instruments << self.scrape_zzounds
+    instruments << self.scrape_guitar
+    instruments << self.scrape_drums
     instruments
   end
     
