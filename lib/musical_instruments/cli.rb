@@ -8,10 +8,10 @@ class MusicalInstruments::CLI
   end
   
   def list_instruments
-    puts "Musical instruments for sale:"
+    puts "6 String Acoustic Guitars for sale:"
     @instruments = MusicalInstruments::Instruments.instrument
     @instruments.each.with_index(1) do |instrument, i|
-      puts "#{i}. #{instrument.name} - #{instrument.price} - #{instrument.availability}"
+      puts "#{i}. #{instrument.name} - #{instrument.price} - #{instrument.description}"
     end
   end
   
@@ -23,7 +23,7 @@ class MusicalInstruments::CLI
       
       if input.to_i > 0
         the_instrument = @instruments[input.to_i - 1]
-        puts "#{the_instrument.name} - #{the_instrument.price} - #{the_instrument.availability}"
+        puts "#{the_instrument.name} - #{the_instrument.price} - #{the_instrument.description}"
       elsif input == "cat"
         list_instruments
       elsif input == "exit"

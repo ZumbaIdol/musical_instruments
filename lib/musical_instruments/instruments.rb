@@ -1,5 +1,5 @@
 class MusicalInstruments::Instruments
-  attr_accessor :name, :price, :url, :availability
+  attr_accessor :name, :price, :url, :description
   
   def self.cataolog
     #It should return instances of Instruments
@@ -17,16 +17,11 @@ class MusicalInstruments::Instruments
     doc = Nokogiri::HTML(open("https://www.zzounds.com/item--FEN0197102"))
     name = doc.search("h1#product-title").text
     price = doc.search("div .span-12 .price span").text
+    description = doc.search("div#tab-product-overview").text
     binding.pry
   end
 end
   
- 
-    # instrument_1 = self.new
-    # instrument_1.name = "Roland RD-2000 88-key Stage Piano"
-    # instrument_1.price = "$2399.99"
-    # instrument_1.availability = true
-    # instrument_1.url = "https://www.sweetwater.com/store/detail/RD2000--roland-rd-2000-88-key-stage-piano"
     
     # instrument_2 = self.new
     # instrument_2.name = "Fender American Elite V Jazz Bass, 5-String (Maple, with Case), Natural"
