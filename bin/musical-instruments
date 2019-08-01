@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require './lib/environment'
+require "bundler/setup"
 
 MusicalInstruments::CLI.new.call  #encapsulation
 

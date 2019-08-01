@@ -9,12 +9,10 @@ class MusicalInstruments::CLI
   
   def list_instruments
     puts "Musical instruments for sale:"
-    puts <<-DOC.gsub /^\s*/, ''
-    1. Roland RD-2000 88-key Stage Piano, $2399.99
-    2. Fender American Elite V Jazz Bass, 5-String (Maple, with Case), Natural, $2149.99
-    3. Maharaja Tabla Drum Set- Buy 3KG Black Brass Bayan, Finest Dayan with Book, Hammer, Cushions and Cover (PDI-EA)- $285.00
-    4. Cremona SV-500 Series Violin Outfit, $399.99
-    DOC
+    @instruments = MusicalInstruments::Instruments.instrument
+    @instruments.each.with_index(1) do |instrument, i|
+      puts "#{i}. #{instrument.name} - #{instrument.price} - #{instrument.availability}"
+    end
   end
   
   def catalog
@@ -22,18 +20,12 @@ class MusicalInstruments::CLI
     while input != "exit"
       puts "Enter the number of the instrument for a description, cat to see the catalog again, or type exit:"
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "Description for instrument 1..."
-      when "2"
-        puts "Description for instrument 2..."
-      when "3"
-        puts "Description for instrument 3..."
-      when "4"
-        puts "Description for instrument 4..."
-      when "cat"
+      
+      if input.to_i > 0
+        puts @instruments[input.to_i - 1]
+      elsif input == "cat"
         list_instruments
-      when "exit"
+      elsif input == "exit"
         next_time
       else
         puts "I don't understand your answer; please type a number for the instrument, cat, or exit"
