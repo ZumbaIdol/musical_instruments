@@ -6,15 +6,16 @@ class MusicalInstruments::Instruments
     self.scrape_instruments
   end
     
-    def self.scrape_instruments
+  def self.scrape_instruments
     # Scrape websites and return instrument data
-      instruments = []
-      instruments << self.scrape_sweetwater
-    end
+    instruments = []
+    instruments << self.scrape_sweetwater
+    instruments
+  end
     
-    def self.scrape_sweetwater
-      doc = Nokogiri::HTML(open("https://www.sweetwater.com/store/detail/RD2000--roland-rd-2000-88-key-stage-piano"))
-      binding.pry
+  def self.scrape_sweetwater
+    doc = Nokogiri::HTML(open("https://www.sweetwater.com/store/detail/RD2000--roland-rd-2000-88-key-stage-piano"))
+    binding.pry
   end
 end
   
