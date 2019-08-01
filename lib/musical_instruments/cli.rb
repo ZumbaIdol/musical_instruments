@@ -25,12 +25,12 @@ class MusicalInstruments::CLI
         the_instrument = @instruments[input.to_i - 1]
         puts "#{the_instrument.name} - #{the_instrument.price}"
         puts "For more info, type descrip"
-      elsif input == "descrip"
-        puts "#{the_instrument.description}"
-      elsif input == "cat"
-        list_instruments
-      elsif input == "exit"
-        next_time
+        elsif input == "descrip"
+          puts "#{the_instrument.description}"
+        elsif input == "cat"
+          list_instruments
+        elsif input == "exit"
+          next_time
       else
         puts "I don't understand your answer; please type a number for the instrument, cat, or exit"
     end
