@@ -8,7 +8,7 @@ class MusicalInstruments::CLI
   end
   
   def list_instruments
-    puts "6 String Acoustic Guitars for sale:"
+    puts "Musical Instruments for sale:"
     @instruments = MusicalInstruments::Instruments.instrument
     @instruments.each.with_index(1) do |instrument, i|
       puts "#{i}. #{instrument.name} - #{instrument.price} - #{instrument.description}"

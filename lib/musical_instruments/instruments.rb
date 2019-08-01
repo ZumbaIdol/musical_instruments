@@ -13,11 +13,21 @@ class MusicalInstruments::Instruments
     instruments
   end
     
-  def self.scrape_zzounds
+  def self.scrape_guitar
     doc = Nokogiri::HTML(open("https://www.zzounds.com/item--FEN0197102"))
-    name = doc.search("h1#product-title").text
-    price = doc.search("div .span-12 .price span").text
-    description = doc.search("div#tab-product-overview").text
+    
+    #instr = self.new
+    name = doc.search("h1#product-title").text.strip
+    price = doc.search("div .span-12 .price span").text.strip
+    description = doc.search("div#tab-product-overview").text.strip
+    #instr
+  end
+  
+  def self.scrape_drums
+    doc = Nokogiri::HTML(open("https://www.zzounds.com/item--GREGE4E825Z"))
+    
+    name = ("h1#product-title").text.strip
+    
     binding.pry
   end
 end
