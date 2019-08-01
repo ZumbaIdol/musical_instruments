@@ -22,7 +22,8 @@ class MusicalInstruments::CLI
       input = gets.strip.downcase
       
       if input.to_i > 0
-        puts @instruments[input.to_i - 1]
+        the_instrument = @instruments[input.to_i - 1]
+        puts "#{the_instrument.name} - #{the_instrument.price} - #{the_instrument.availability}"
       elsif input == "cat"
         list_instruments
       elsif input == "exit"
