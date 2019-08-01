@@ -30,7 +30,7 @@ class MusicalInstruments::CLI
       elsif input == "cat"
         list_instruments
       elsif input == "exit"
-          next_time
+        next_time
       else
         puts "I don't understand your answer; please type a number for the instrument, cat, or exit"
     end
