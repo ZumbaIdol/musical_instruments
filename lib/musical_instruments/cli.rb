@@ -18,7 +18,7 @@ class MusicalInstruments::CLI
     @instruments = MusicalInstruments::Instruments.cataolog
     @instruments.each.with_index(1) do |instrument, i|
       puts ""
-      puts "#{i}. #{instrument.name} - #{instrument.price}"
+      puts "*** #{i}. #{instrument.name} - #{instrument.price} ***"
       puts ""
     end
   end
@@ -40,7 +40,7 @@ class MusicalInstruments::CLI
         puts ""
         elsif input == "descrip"
           puts ""
-          puts "-----------Description------------"
+          puts "**********Description**********"
           puts ""
           puts "#{the_instrument.description}"
           puts ""
