@@ -2,9 +2,11 @@
 class MusicalInstruments::CLI
   
   def call
+    puts ""
     puts "--------------------"
     puts "Welcome to My-Music!"
     puts "--------------------"
+    puts ""
     list_instruments
     catalog
   end
