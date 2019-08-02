@@ -50,7 +50,7 @@ class MusicalInstruments::CLI
         next_time
       else
         puts ""
-        puts "I don't understand your answer..."
+        puts "): I don't understand your answer :("
         puts ""
       end
     end
