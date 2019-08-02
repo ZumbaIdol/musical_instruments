@@ -1,10 +1,23 @@
 class MusicalInstruments::Instruments
   attr_accessor :name, :price, :url, :description
   
+  # @@all = []
+  
+  # def self.all
+  #   @@all
+  # end
+  
   def self.cataolog
     #It should return instances of Instruments
     self.scrape_instruments
   end
+  
+  # def self.scrape_guitars_page
+  #   doc = Nokogiri::HTML(open("https://www.zzounds.com/cat--Electric-Guitars--2640"))
+  #   instr_category = 
+  #   @@all << self.scrape_guitars
+  #   binding.pry
+  # end
     
   def self.scrape_instruments
     # Scrape websites and return instrument data
@@ -13,7 +26,7 @@ class MusicalInstruments::Instruments
     instruments << self.scrape_drums
     instruments
   end
-    
+  
   def self.scrape_guitar
     doc = Nokogiri::HTML(open("https://www.zzounds.com/item--FEN0197102"))
     
