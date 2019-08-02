@@ -1,5 +1,6 @@
 class MusicalInstruments::Instruments
   attr_accessor :name, :price, :url, :description
+  base_url = "https://www.zzounds.com/cat--Electric-Guitars--2640"
   
   # @@all = []
   
