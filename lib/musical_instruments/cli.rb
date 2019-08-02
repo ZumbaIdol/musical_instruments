@@ -11,7 +11,7 @@ class MusicalInstruments::CLI
   
   def list_instruments
     puts ""
-    puts "Musical Instruments for sale:"
+    puts "**********Musical Instruments for sale**********"
     puts ""
     @instruments = MusicalInstruments::Instruments.cataolog
     @instruments.each.with_index(1) do |instrument, i|
