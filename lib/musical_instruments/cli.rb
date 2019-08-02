@@ -13,7 +13,7 @@ class MusicalInstruments::CLI
   
   def list_instruments
     puts ""
-    puts "**********Musical Instruments for sale**********"
+    puts "********** Musical Instruments for sale **********"
     puts ""
     @instruments = MusicalInstruments::Instruments.cataolog
     @instruments.each.with_index(1) do |instrument, i|
@@ -38,27 +38,28 @@ class MusicalInstruments::CLI
         puts ""
         puts "For more info, type descrip"
         puts ""
-        elsif input == "descrip"
-          puts ""
-          puts "**********Description**********"
-          puts ""
-          puts "#{the_instrument.description}"
-          puts ""
-        elsif input == "cat"
-          list_instruments
-        elsif input == "exit"
-          next_time
-          binding.pry
+      elsif input == "descrip"
+        puts ""
+        puts "********** Description **********"
+        puts ""
+        puts "#{the_instrument.description}"
+        puts ""
+      elsif input == "cat"
+        list_instruments
+      elsif input == "exit"
+        next_time
       else
         puts ""
         puts "I don't understand your answer..."
         puts ""
+      end
     end
   end
   
   def next_time
-    puts "See you next time and thanks for stopping by!"
-    end
+    puts ""
+    puts "---------- See you next time and thanks for stopping by! ----------"
+    puts ""
   end
 end
 
