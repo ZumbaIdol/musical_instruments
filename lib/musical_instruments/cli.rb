@@ -27,14 +27,14 @@ class MusicalInstruments::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts "Enter the number of the instrument you would like more info about, cat to see the catalog again, or type exit:"
+      puts "Enter the number of the instrument you would like more info about, cat to see \nthe catalog again, or type exit:"
       puts ""
       input = gets.strip.downcase
       
       if input.to_i > 0 && input.to_i < 3
         the_instrument = @instruments[input.to_i - 1]
         puts ""
-        puts "#{the_instrument.name} - #{the_instrument.price}"
+        puts "#{the_instrument.name} -\n #{the_instrument.price}"
         puts ""
         puts "For more info, type descrip"
         puts ""
