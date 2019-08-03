@@ -44,6 +44,10 @@ class MusicalInstruments::Instruments
     title = parsed_title.css("div a h2")[0].text.strip
     guitars_and_accessories = parsed_items.css("div .span-11 a .span-11").text.strip
   end
+  
+  def self.elect_guitars_descrip(description)
+    
+  end
 
   
   def self.scrape_drums
