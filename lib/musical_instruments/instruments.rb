@@ -41,7 +41,7 @@ class MusicalInstruments::Instruments
   def self.scrape_elec_guitars
     doc = Nokogiri::HTML(open(BASE_URL))
     binding.pry
-    title = parsed_title.css("div a h2")[0].text.strip
+    titles = parsed_titles.css("div a h2")[0..5].text.strip
     guitars_and_accessories = parsed_items.css("div .span-11 a .span-11").text.strip
   end
   
