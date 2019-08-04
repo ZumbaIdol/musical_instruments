@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'David Foote'"]
   spec.email         = ["'david.a.foote@gmail.com'"]
 
-  spec.summary       = "Peruse different musical instruments"
-  spec.description   = "Gets a list of musical instruments with descriptions and prices"
+  spec.summary       = "Peruse different electric guitars"
+  spec.description   = "Gets a list of electric guitars with descriptions and prices"
   #spec.homepage      = "www.example.com"
   spec.license       = "MIT"
 

@@ -7,18 +7,18 @@ class MusicalInstruments::CLI
     puts "Welcome to My-Music!"
     puts "--------------------"
     puts ""
-    list_instruments
+    list_guitars
     catalog
   end
   
-  def list_instruments
+  def list_guitars
     puts ""
-    puts "********** Musical Instruments for sale **********"
+    puts "********** Electric Guitars for sale **********"
     puts ""
-    @instruments = MusicalInstruments::Instruments.cataolog
-    @instruments.each.with_index(1) do |instrument, i|
+    @guitars = MusicalInstruments::Guitars.cataolog
+    @guitars.each.with_index(1) do |guitar, i|
       puts ""
-      puts "*** #{i}. #{instrument.name} - #{instrument.price} ***"
+      puts "*** #{i}. #{guitar.name} - #{guitar.price} ***"
       puts ""
     end
   end
@@ -32,9 +32,9 @@ class MusicalInstruments::CLI
       input = gets.strip.downcase
       
       if input.to_i > 0 && input.to_i < 3
-        the_instrument = @instruments[input.to_i - 1]
+        the_guitar = @guitars[input.to_i - 1]
         puts ""
-        puts "#{the_instrument.name} -\n #{the_instrument.price}"
+        puts "#{the_guitar.name} -\n #{the_guitar.price}"
         puts ""
         puts "For more info, type descrip"
         puts ""
@@ -42,10 +42,10 @@ class MusicalInstruments::CLI
         puts ""
         puts "********** Description **********"
         puts ""
-        puts "#{the_instrument.description}"
+        puts "#{the_guitar.description}"
         puts ""
       elsif input == "cat"
-        list_instruments
+        list_guitars
       elsif input == "exit"
         next_time
       else
