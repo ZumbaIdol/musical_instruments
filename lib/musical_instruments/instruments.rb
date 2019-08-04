@@ -42,22 +42,11 @@ class MusicalInstruments::Instruments
     doc = Nokogiri::HTML(open(BASE_URL))
     binding.pry
     titles = parsed_titles.css("div a h2")[0..5].text.strip
-    guitars = parsed_items.css("div .span-11 a .span-11").text.strip
+    guitars = parsed_items.css("div .span-11 a")[7..46].text.strip
   end
   
   def self.elect_guitars_descrip(description)
     
-  end
-
-  
-  def self.scrape_drums
-    doc = Nokogiri::HTML(open("https://www.zzounds.com/item--GREGE4E825Z"))
-    
-    instr = self.new
-    instr.name = doc.search("h1#product-title").text.strip
-    instr.price = doc.search("div .span-22 .price span").text.strip
-    instr.description = doc.search("div#tab-product-overview").text.strip
-    instr
   end
 end
   
