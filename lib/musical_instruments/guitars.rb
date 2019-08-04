@@ -36,9 +36,9 @@ class MusicalInstruments::Guitars
     elec_guitars = parsed_items.css("div .span-11 a")[7..46].text.strip
   end
   
-  def self.elect_guitars_descrip(description)
-    description_url = "https://www.zzounds.com/item--#{item}"
+  def self.elec_guitars_description
     binding.pry
+    doc = Nokogiri::HTML(open("https://www.zzounds.com/item--#{item}"))
   end
 end
   
