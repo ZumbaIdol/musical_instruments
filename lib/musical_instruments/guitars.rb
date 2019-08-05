@@ -1,5 +1,5 @@
 class MusicalInstruments::Guitars
-  attr_accessor :name, :price, :url, :description_url, :description
+  attr_accessor :name, :price, :url, :descriptions
   BASE_URL = "https://www.zzounds.com/cat--Electric-Guitars--2640"
   
   # @@all = []
@@ -36,9 +36,11 @@ class MusicalInstruments::Guitars
     elec_guitars = parsed_items.css("div .span-11 a")[7..46].text.strip
   end
   
-  def self.elec_guitars_description
+  def self.scrape_elec_guitars_descriptions(descriptions)
+    descriptions = []
     binding.pry
-    doc = Nokogiri::HTML(open("https://www.zzounds.com/item--#{item}"))
+    doc = Nokogiri::HTML(open("https://www.zzounds.com/item--GIBDSFS18"))
+    #descriptions[:descriptions] = doc.css("")
   end
 end
   

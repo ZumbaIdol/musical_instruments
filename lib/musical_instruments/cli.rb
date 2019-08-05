@@ -31,7 +31,7 @@ class MusicalInstruments::CLI
       puts ""
       input = gets.strip.downcase
       
-      if input.to_i > 6 && input.to_i < 48
+      if input.to_i > 6 && input.to_i < 47
         the_guitar = @guitars[input.to_i - 1]
         puts ""
         puts "#{the_guitar.name} -\n #{the_guitar.price}"
