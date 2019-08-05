@@ -34,7 +34,7 @@ class MusicalInstruments::CLI
       if input.to_i > 6 && input.to_i < 47
         the_guitar = @guitars[input.to_i - 1]
         puts ""
-        puts "#{the_guitar.name} 
+        puts "#{the_guitar.name}"
         puts ""
         puts "For more info, type descrip"
         puts ""
@@ -42,7 +42,7 @@ class MusicalInstruments::CLI
         puts ""
         puts "********** Description **********"
         puts ""
-        puts "{the_guitar.description}" -\n #{the_guitar.price}"
+        puts "#{the_guitar.description} -\n #{the_guitar.price}"
         puts ""
       elsif input == "cat"
         list_guitars
