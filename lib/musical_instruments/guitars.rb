@@ -36,11 +36,10 @@ class MusicalInstruments::Guitars
     elec_guitars = parsed_items.css("div .span-11 a")[7..46].text.strip
   end
   
-  def self.scrape_elec_guitars_description(description)
-    descriptions = []
-    binding.pry
+  def self.scrape_elec_guitars_description
     doc = Nokogiri::HTML(open("https://www.zzounds.com/item--GIBDSFS18"))
-    #description[:description] = doc.css("")
+    description = doc.css("div#product-title-container .span-41")[1].text
+    price = doc.css("div .price span").text
   end
 end
   
