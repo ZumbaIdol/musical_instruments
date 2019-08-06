@@ -1,5 +1,5 @@
 # CLI Controller
-class MusicalInstruments::CLI
+class CLI
   
   def call
     puts ""
@@ -15,19 +15,20 @@ class MusicalInstruments::CLI
     puts ""
     puts "********** Electric Guitars for sale **********"
     puts ""
-    @guitars = MusicalInstruments::Guitars.cataolog
+    @guitars = Guitars.catalog
     @guitars.each.with_index(1) do |guitar, i|
       puts ""
       puts "*** #{i}. #{guitar.name} - #{guitar.price} ***"
       puts ""
     end
   end
+end
   
   def catalog
     input = nil
     while input != "exit"
       puts ""
-      puts "Enter the number of the instrument you would like more info about, cat to see \nthe catalog again, or type exit:"
+      puts "Enter the number of the guitar you would like more info about, cat to see \nthe catalog again, or type exit:"
       puts ""
       input = gets.strip.downcase
       
@@ -54,7 +55,7 @@ class MusicalInstruments::CLI
         puts ""
       end
     end
-  end
+  #end
   
   def next_time
     puts ""
