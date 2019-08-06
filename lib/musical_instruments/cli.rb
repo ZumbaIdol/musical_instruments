@@ -15,7 +15,7 @@ class CLI
     puts ""
     puts "********** Electric Guitars for sale **********"
     puts ""
-    @guitars = Guitars.catalog
+    @guitars = catalog
     @guitars.each.with_index(1) do |guitar, i|
       puts ""
       puts "*** #{i}. #{guitar.name} - #{guitar.price} ***"
@@ -55,7 +55,6 @@ end
         puts ""
       end
     end
-  #end
   
   def next_time
     puts ""
