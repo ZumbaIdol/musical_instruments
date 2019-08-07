@@ -3,11 +3,12 @@ class MusicalInstruments::Guitars
   
     @@all = []
     
-    def initialize(name: name, url: url)
+    def initialize(name=nil, url=nil, description=nil, price=nil)
     @name = name
     @url = url
-    @description, @price = nil, nil
-    self.class.all << self
+    @description = description
+    @price = price
+    @@all << self
   end
   
    
@@ -25,5 +26,9 @@ class MusicalInstruments::Guitars
   
   def price
     @price ||= doc.css("div .price span").text.strip
+  end
+  
+  def doc
+    @doc = Nokogiri::HTML(open(self.url))
   end
 end

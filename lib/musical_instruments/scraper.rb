@@ -1,22 +1,13 @@
 class MusicalInstrument::Scraper
-
-  def self.catalog
-    #It should return instances of Instruments
-    self.scrape_guitars
-  end
-    
-  def self.scrape_guitars
-    # Scrape websites and return instrument data
-    guitars = []
-    guitars << self.scrape_elec_guitars
-    guitars
+  
+  def get_page
+    Nokogiri::HTML(open("https://www.zzounds.com/cat--Electric-Guitars--2640"))
   end
   
-  def self.scrape_guitars
-    doc = Nokogiri::HTML(open("https://www.zzounds.com/cat--Electric-Guitars--2640"))
+  def scrape_guitars_list
+    self.get_page.css("div .span-11 a")[7..46].text.strip
+  end
     
-    guitar = Guitar.new
-    guitar.name = doc.css("div .span-11 a")[7..46].text.strip
     guitar.price = doc.css("div .price span").text.strip
     guitar.description = doc.css("div#product-title-container .span-41")[1].text
     guitar
