@@ -3,6 +3,10 @@ class MusicalInstruments::Guitars
   
     @@all = []
     
+  def self.new_from_index_page(guitar)
+    
+  end
+    
     def initialize(name=nil, url=nil, description=nil, price=nil)
     @name = name
     @url = url
