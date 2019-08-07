@@ -15,10 +15,10 @@ class MusicalInstruments::CLI
     puts ""
     puts "********** Electric Guitars for sale **********"
     puts ""
-    @guitars = catalog
+    @guitars = MusicalInstruments::Guitars.scrape_guitars
     @guitars.each.with_index(1) do |guitar, i|
       puts ""
-      puts "*** #{i}. #{guitar.name} - #{guitar.price} ***"
+      puts "*** #{i}. #{guitar.name} ***"
       puts ""
     end
   end
