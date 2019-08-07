@@ -1,5 +1,5 @@
 # CLI Controller
-class CLI
+class MusicalInstruments::CLI
   
   def call
     puts ""

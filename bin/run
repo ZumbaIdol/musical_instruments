@@ -3,6 +3,6 @@
 require './lib/environment'
 require "bundler/setup"
 
-CLI.new.call  #encapsulation
+MusicalInstruments::CLI.new.call  #encapsulation
 
 # Execution point
