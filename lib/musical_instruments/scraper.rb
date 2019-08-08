@@ -1,10 +1,10 @@
-class MusicalInstrument::Scraper
+class MusicalInstruments::Scraper
   
   def get_page
     Nokogiri::HTML(open("https://www.zzounds.com/cat--Electric-Guitars--2640"))
   end
   
-  def scrape_guitars_list
+  def scrape_guitar_list
     self.get_page.css("div .span-11 a")[7..46].text.strip
   end
   

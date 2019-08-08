@@ -6,3 +6,4 @@ require 'pry'
 require_relative "./musical_instruments/version"
 require_relative './musical_instruments/cli'
 require_relative './musical_instruments/guitars'
+require_relative './musical_instruments/scraper'

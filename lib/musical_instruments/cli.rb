@@ -15,8 +15,8 @@ class MusicalInstruments::CLI
     puts ""
     puts "********** Electric Guitars for sale **********"
     puts ""
-    @guitars = MusicalInstruments::Scraper.scrape_guitars_list
-    @guitars.each.with_index(1) do |guitar, i|
+    guitars = MusicalInstruments::Scraper.scrape_guitar_list
+    guitars.each.with_index(1) do |guitar, i|
       puts ""
       puts "*** #{i}. #{guitar.name} ***"
       puts ""
@@ -33,7 +33,7 @@ end
       input = gets.strip.downcase
       
       if input.to_i > 6 && input.to_i < 47
-        the_guitar = @guitars[input.to_i - 1]
+        the_guitar =Guitars.all[input.to_i - 1]
         puts ""
         puts "#{the_guitar.name}"
         puts ""
