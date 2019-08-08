@@ -3,10 +3,12 @@ class MusicalInstruments::Guitars
   
     @@all = []
     
-  # def self.new_from_index_page(guitar)
-  #   self.new(
-      
-  # end
+  def self.new_from_index_page(guitar)
+    self.new(
+      guitar.css("h2").text,
+      "https://www.zzounds.com #{guitar.css("div .span-11 a")[7..46].text.strip}"
+      )
+  end
     
     def initialize(name=nil, url=nil, description=nil, price=nil)
     @name = name

@@ -28,9 +28,11 @@ end
     input = nil
     while input != "exit"
       puts ""
-      puts "Enter the number of the guitar you would like more info about, cat to see \nthe catalog again, or type exit:"
+      puts "Which guitar you would like more info about? Type the number for the guitar, cat to see \nthe catalog again, or exit to close the program:"
       puts ""
       input = gets.strip.downcase
+      guitar = MusicalInstruments::Guitars.find(input.to_i)
+     
       
       if input.to_i > 6 && input.to_i < 47
         the_guitar =Guitars.all[input.to_i - 1]
