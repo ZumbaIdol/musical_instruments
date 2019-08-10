@@ -6,7 +6,7 @@ class MusicalInstruments::Guitars
   def self.new_from_index_page(guitar)
     self.new(
       guitar.css("h2").text,
-      "https://www.zzounds.com #{guitar.css("div .span-11 a")[7..46].text.strip}"
+      "https://www.zzounds.com/cat--Electric-Guitars--2640 #{guitar.css("div .span-11 a")[7..46].text.strip}"
       )
   end
     
@@ -21,21 +21,5 @@ class MusicalInstruments::Guitars
    
   def self.all
     @@all
-  end
-  
-  def self.find(item)
-    self.all[item - 1]
-  end
-  
-  def description
-    @description ||= doc.css("div#product-title-container .span-41")[1].text
-  end
-  
-  def price
-    @price ||= doc.css("div .price span").text.strip
-  end
-  
-  def doc
-    @doc = Nokogiri::HTML(open(self.url))
   end
 end

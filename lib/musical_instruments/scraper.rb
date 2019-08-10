@@ -5,13 +5,22 @@ class MusicalInstruments::Scraper
   end
   
   def scrape_guitar_list
-    self.get_page.css("div .span-11 a")[7..46].text.strip
+    guitars = self.get_page.css("div .span-11 a.bp-title").map(&:text).map(&:strip)
+    make_guitars(guitars)
   end
   
-  def make_guitars
-    scrape_guitars_index.each do |guitar|
-      MusicalInstruments::Guitars.new_from_index_page(guitar)
+  def make_guitars(guitars)
+    guitars.each do |guitar|
+      MusicalInstruments::Guitars.new(guitar)
+      #get_details
     end
+  end
+  
+  def get_details
+    links = self.get_page.css("div .span-11 a.bp-title").map{|a| a.attr("href")}
+    #guitar = self.new
+    @guitar.details = self.get_page.css("div#product-title-container .span-41")[1].text
+    @guitar.price = self.get_page.css("div .price span").text
   end
 end
   
