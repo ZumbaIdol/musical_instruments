@@ -18,7 +18,7 @@ class MusicalInstruments::CLI
     puts ""
     MusicalInstruments::Guitars.all.each.with_index(1) do |guitar, i|
       puts ""
-      puts "*** #{i}. #{guitar.name} ***"
+      puts "--- #{i}. #{guitar.name} ---"
       puts ""
     end
   end
@@ -28,7 +28,7 @@ end
     input = nil
     while input != "exit"
       puts ""
-      puts "Which guitar you would like more info about? Type the number of the guitar for a description and price, cat to see \nthe catalog again, or exit to close the program:"
+      puts "Which guitar you would like more info about? Type the number of the guitar for a description and price, cat to see \nthe catalog again, or exit:"
       puts ""
       input = gets.strip.downcase
       guitar = MusicalInstruments::Guitars.all[input.to_i]
