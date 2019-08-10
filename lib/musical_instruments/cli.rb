@@ -36,7 +36,7 @@ end
       
       if input.to_i > 0 && input.to_i < 54
         the_guitar = MusicalInstruments::Guitars.all[input.to_i - 1]
-        @get_details
+        MusicalInstruments::Scraper.scrape_guitar_details
         puts ""
         puts "#{the_guitar.detail} -\n #{the_guitar.price}"
         puts ""
@@ -57,4 +57,3 @@ end
     puts ""
   end
 end
-
