@@ -31,10 +31,10 @@ end
       puts "Which guitar or accessory you would like more info about? Type the number of the item for details and a price, cat to see \nthe catalog again, or exit:"
       puts ""
       input = gets.strip.downcase
-      guitar = MusicalInstruments::Guitars.all[input.to_i]
+      #guitar = MusicalInstruments::Guitars.all[input.to_i]
      
       
-      if input.to_i > 1 && input.to_i < 54
+      if input.to_i > 0 && input.to_i < 54
         the_guitar = MusicalInstruments::Guitars.all[input.to_i - 1]
         @get_details
         puts ""
