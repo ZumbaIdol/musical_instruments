@@ -28,7 +28,7 @@ end
     input = nil
     while input != "exit"
       puts ""
-      puts "Which guitar you would like more info about? Type the number of the guitar for details and price, cat to see \nthe catalog again, or exit:"
+      puts "Which guitar or accessory you would like more info about? Type the number of the item for details and a price, cat to see \nthe catalog again, or exit:"
       puts ""
       input = gets.strip.downcase
       guitar = MusicalInstruments::Guitars.all[input.to_i]
