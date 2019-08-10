@@ -18,9 +18,11 @@ class MusicalInstruments::Scraper
   
   def get_details
     links = self.get_page.css("div .span-11 a.bp-title").map{|a| a.attr("href")}
-    #guitar = self.new
-    @guitar.details = self.get_page.css("div#product-title-container .span-41")[1].text
-    @guitar.price = self.get_page.css("div .price span").text
+    link.each_with_index do |link, i|
+    details = self.get_page.css("div#product-title-container .span-41")[1].text
+    price = self.get_page.css("div .price span").text
+    end
+    get_details
   end
 end
   

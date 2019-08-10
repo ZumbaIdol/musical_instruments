@@ -38,7 +38,7 @@ end
         the_guitar = MusicalInstruments::Guitars.all[input.to_i - 1]
         self.get_details
         puts ""
-        puts "#{the_guitar.name} -\n #{the_guitar.description} -\n #{the_guitar.price}"
+        puts "#{the_guitar.details} -\n #{the_guitar.price}"
         puts ""
       elsif input == "cat"
         list_guitars
