@@ -28,7 +28,7 @@ end
     input = nil
     while input != "exit"
       puts ""
-      puts "Which guitar you would like more info about? Type the number of the guitar for a description and price, cat to see \nthe catalog again, or exit:"
+      puts "Which guitar you would like more info about? Type the number of the guitar for details and price, cat to see \nthe catalog again, or exit:"
       puts ""
       input = gets.strip.downcase
       guitar = MusicalInstruments::Guitars.all[input.to_i]
@@ -36,9 +36,9 @@ end
       
       if input.to_i > 1 && input.to_i < 54
         the_guitar = MusicalInstruments::Guitars.all[input.to_i - 1]
-        self.get_details
+        @get_details
         puts ""
-        puts "#{the_guitar.details} -\n #{the_guitar.price}"
+        puts "#{the_guitar.detail} -\n #{the_guitar.price}"
         puts ""
       elsif input == "cat"
         list_guitars

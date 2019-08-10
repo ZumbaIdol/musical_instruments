@@ -1,4 +1,7 @@
 class MusicalInstruments::Scraper
+  GUITAR_NAMES = []
+  GUITAR_URLS = []
+  
   
   def get_page
     Nokogiri::HTML(open("https://www.zzounds.com/cat--Electric-Guitars--2640"))
@@ -17,12 +20,13 @@ class MusicalInstruments::Scraper
   end
   
   def get_details
-    links = self.get_page.css("div .span-11 a.bp-title").map{|a| a.attr("href")}
-    link.each_with_index do |link, i|
-    details = self.get_page.css("div#product-title-container .span-41")[1].text
-    price = self.get_page.css("div .price span").text
+    GUITAR_NAMES.each.with_index do |name, i|
+      guitar = Guitar.new(name)
+      guitar.url = GUITAR_URLS[i]
+      detail = guitar.css("div#product-title-container .span-41")[1].text
+      price = guitar.css("div .price span").text
+      guitar 
     end
-    get_details
   end
 end
   

@@ -1,5 +1,5 @@
 class MusicalInstruments::Guitars
-  attr_accessor :name, :url, :description, :price
+  attr_accessor :name, :url, :detail, :price
   
     @@all = []
     
@@ -13,7 +13,7 @@ class MusicalInstruments::Guitars
     def initialize(name=nil, url=nil, description=nil, price=nil)
     @name = name
     @url = url
-    @description = description
+    @detail = detail
     @price = price
     @@all << self
   end
