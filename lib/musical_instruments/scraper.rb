@@ -12,18 +12,14 @@ class MusicalInstruments::Scraper
   def make_guitars(guitars)
     guitars.each do |guitar|
       MusicalInstruments::Guitars.new(guitar)
-      #get_details
     end
   end
    
-   def scrape_guitar_details
-     page = Nokogiri::HTML(open(PAGE_URL))
-     links = page.css("div .span-11 a.bp-title").map{|a| a.attr("href")}
-     links.each do |link|
-      details = page.css("div#product-title-container .span-41")[1].text.strip
-      price = page.css("div .price span").map(&:text)
-      page
-    end
+  def scrape_guitar_details
+    page = Nokogiri::HTML(open("https://www.zzounds.com/item--GIBDSFS18"))
+    #links = page.css("div .span-11 a.bp-title").map{|a| a.attr("href")}
+      the_guitar_detail = page.css("div#product-title-container .span-41")[1].text.strip
+      the_guitar_price = page.css("div .price span").map(&:text)
   end
 end
   

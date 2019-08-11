@@ -36,7 +36,7 @@ class MusicalInstruments::CLI
       if input.to_i > 0 && input.to_i < 54
         the_guitar = MusicalInstruments::Guitars.all[input.to_i - 1]
         puts ""
-        puts "#{the_guitar.detail} -\n #{the_guitar.price}"
+        puts "#{the_guitar.name} -\n #{the_guitar.detail}"
         puts ""
       elsif input == "cat"
         list_guitars
