@@ -15,13 +15,14 @@ class MusicalInstruments::Scraper
       #get_details
     end
   end
-  
+   
    def scrape_guitar_details
      page = Nokogiri::HTML(open(PAGE_URL))
      links = page.css("div .span-11 a.bp-title").map{|a| a.attr("href")}
      links.each do |link|
       details = page.css("div#product-title-container .span-41")[1].text.strip
       price = page.css("div .price span").map(&:text)
+      page
     end
   end
 end
