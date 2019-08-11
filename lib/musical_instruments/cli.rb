@@ -41,7 +41,7 @@ class MusicalInstruments::CLI
       elsif input == "cat"
         list_guitars
       elsif input == "exit"
-        self.next_time
+        next_time
       else
         puts ""
         puts "): I don't understand your answer :("
@@ -50,7 +50,7 @@ class MusicalInstruments::CLI
     end
   end
   
-  def self.next_time
+  def next_time
     puts ""
     puts "---------- See you next time and thanks for stopping by! ----------"
     puts ""
