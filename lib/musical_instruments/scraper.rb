@@ -7,7 +7,6 @@ class MusicalInstruments::Scraper
   def scrape_guitar_list
     guitars = self.get_page.css("div .span-11 a.bp-title").map(&:text).map(&:strip)
     links = self.get_page.css("div .span-11 a.bp-title").map{|item| item.attr("href")}
-    binding.pry
     make_guitars(guitars, links)
   end
   
@@ -19,6 +18,11 @@ class MusicalInstruments::Scraper
   
   def guitar_details(guitar)
     url = guitar.url
+    @page = Nokogiri::HTML(open(self.url))
+    guitar.detail ||= page.css("div#product-title-container .span-41")[1].text.strip
+    guitar.price ||= page.css("div .price span").map(&:text)
+    guitar
+  end
 end
   
 #     name = doc.css("div a h2")[0..5].text.strip
