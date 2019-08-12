@@ -30,7 +30,7 @@ class MusicalInstruments::CLI
       puts "Which guitar or accessory would you like more info about? Type the number of the item for details and a price, cat to see \nthe catalog again, or exit:"
       puts ""
       input = gets.strip.downcase
-      #guitar = MusicalInstruments::Guitars.all[input.to_i]
+      #guitar = MusicalInstruments::Guitars.find(input.to_i)
      
       
       if input.to_i > 0 && input.to_i < 54

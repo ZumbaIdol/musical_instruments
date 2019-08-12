@@ -16,6 +16,11 @@ class MusicalInstruments::Guitars
     @@all
   end
   
+  def self.find(item)
+    self.all[item - 1]
+  end
+  
+  
   def detail
     @the_guitar_detail ||= page.css("div#product-title-container .span-41")[1].text.strip
   end

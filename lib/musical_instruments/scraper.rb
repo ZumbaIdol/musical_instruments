@@ -6,14 +6,19 @@ class MusicalInstruments::Scraper
   
   def scrape_guitar_list
     guitars = self.get_page.css("div .span-11 a.bp-title").map(&:text).map(&:strip)
-    make_guitars(guitars)
+    links = self.get_page.css("div .span-11 a.bp-title").map{|item| item.attr("href")}
+    binding.pry
+    make_guitars(guitars, links)
   end
   
-  def make_guitars(guitars)
-    guitars.each do |guitar|
-      MusicalInstruments::Guitars.new(guitar)
+  def make_guitars(guitars, links)
+    guitars.each_with_index do |guitar, index|
+      MusicalInstruments::Guitars.new(guitar, links[index])
     end
   end
+  
+  def guitar_details(guitar)
+    url = guitar.url
 end
   
 #     name = doc.css("div a h2")[0..5].text.strip
