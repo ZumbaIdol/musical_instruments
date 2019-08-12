@@ -20,6 +20,10 @@ class MusicalInstruments::Guitars
     @the_guitar_detail ||= page.css("div#product-title-container .span-41")[1].text.strip
   end
   
+  def price
+    @the_guitar_price ||= page.css("div .price span").map(&:text)
+  end
+  
   def page
     @page = Nokogiri::HTML(open("https://www.zzounds.com/item--GIBDSFS18"))
   end
