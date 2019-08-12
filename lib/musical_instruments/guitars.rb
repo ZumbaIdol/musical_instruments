@@ -3,7 +3,7 @@ class MusicalInstruments::Guitars
   
     @@all = []
     
-    def initialize(name=nil, url=nil, description=nil, price=nil)
+    def initialize(name=nil, url=nil, detail=nil, price=nil)
     @name = name
     @url = url
     @detail = detail
