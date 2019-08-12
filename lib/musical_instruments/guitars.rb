@@ -15,4 +15,12 @@ class MusicalInstruments::Guitars
   def self.all
     @@all
   end
+  
+  def detail
+    @the_guitar_detail ||= page.css("div#product-title-container .span-41")[1].text.strip
+  end
+  
+  def page
+    @page = Nokogiri::HTML(open("https://www.zzounds.com/item--GIBDSFS18"))
+  end
 end
