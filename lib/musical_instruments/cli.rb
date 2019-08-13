@@ -14,7 +14,7 @@ class MusicalInstruments::CLI
   
   def list_guitars
     puts ""
-    puts "********** Electric Guitars for sale **********"
+    puts "********** Electric Guitars and Accessories for sale **********"
     puts ""
     MusicalInstruments::Guitars.all.each.with_index(1) do |guitar, i|
       puts ""
@@ -27,7 +27,7 @@ class MusicalInstruments::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts "Which guitar would you like more info about? Type the number of the guitar for details and a price, cat to see \nthe catalog again, or exit:"
+      puts "Which guitar and/or would you like more info about? Type the number of the item for details and a price, cat to see \nthe catalog again, or exit:"
       puts ""
       input = gets.strip.downcase
       
