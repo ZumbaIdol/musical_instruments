@@ -2,7 +2,7 @@
 class MusicalInstruments::CLI
   
   def call
-    MusicalInstruments::Scraper.new.scrape_guitar_list
+    MusicalInstruments::Scraper.scrape_guitar_list
     puts ""
     puts "--------------------"
     puts "Welcome to My-Music!"
@@ -14,7 +14,7 @@ class MusicalInstruments::CLI
   
   def list_guitars
     puts ""
-    puts "********** Electric Guitars and Accessories for sale **********"
+    puts "********** Electric Guitars for sale **********"
     puts ""
     MusicalInstruments::Guitars.all.each.with_index(1) do |guitar, i|
       puts ""
@@ -27,13 +27,11 @@ class MusicalInstruments::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts "Which guitar or accessory would you like more info about? Type the number of the item for details and a price, cat to see \nthe catalog again, or exit:"
+      puts "Which guitar would you like more info about? Type the number of the guitar for details and a price, cat to see \nthe catalog again, or exit:"
       puts ""
       input = gets.strip.downcase
-      #guitar = MusicalInstruments::Guitars.find(input.to_i)
-     
       
-      if input.to_i > 0 && input.to_i < 54
+      if input.to_i > 0 && input.to_i < 46
         the_guitar = MusicalInstruments::Guitars.all[input.to_i - 1]
         MusicalInstruments::Scraper.guitar_details(the_guitar)
         puts ""
@@ -47,9 +45,10 @@ class MusicalInstruments::CLI
         puts ""
         puts "): I don't understand your answer :("
         puts ""
+        end
       end
     end
-  end
+
   
   def next_time
     puts ""
