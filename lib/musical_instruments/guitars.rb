@@ -15,4 +15,13 @@ class MusicalInstruments::Guitars
   def self.all
     @@all
   end
+  
+  
+  #create a method that returns all of the guitars by the name passed through method
+  #method is going to accept an argument of a name
+  #find the guitar that matches that name 
+  
+  def find_guitar(name)
+    
+  end 
 end

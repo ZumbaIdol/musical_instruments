@@ -1,13 +1,17 @@
 # CLI Controller
 class MusicalInstruments::CLI
   
-  def call
-    MusicalInstruments::Scraper.scrape_guitar_list
+  def welcome
     puts ""
     puts "--------------------"
     puts "Welcome to My-Music!"
     puts "--------------------"
     puts ""
+  end
+  
+  def call
+    MusicalInstruments::Scraper.scrape_guitar_list
+    welcome
     list_guitars
     catalog
   end
@@ -33,7 +37,7 @@ class MusicalInstruments::CLI
       
       if input.to_i > 0 && input.to_i < 46
         the_guitar = MusicalInstruments::Guitars.all[input.to_i - 1]
-        MusicalInstruments::Scraper.guitar_details(the_guitar)
+        MusicalInstruments::Scraper.guitar_details(the_guitar) #if the_guitar.detail == nil
         puts ""
         puts "#{the_guitar.name} -\n  #{the_guitar.price} \n#{the_guitar.detail}"
         puts ""
