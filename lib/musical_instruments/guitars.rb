@@ -21,7 +21,7 @@ class MusicalInstruments::Guitars
   #method is going to accept an argument of a name
   #find the guitar that matches that name 
   
-  def find_guitar(name)
-    
+  def self.find_guitar_by_name(name)
+    @@all.find{|guitar| guitar.name == name}
   end 
 end
